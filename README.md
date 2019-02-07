@@ -1,13 +1,13 @@
 # personal tools
 
-##Install these tools:
+## Install these tools:
 
-#Bash
+# Bash
 
 echo "export PATH=/path/to/installation/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
 
-#ZSH
+# ZSH
 
 echo "export PATH=/path/to/installation/bin:$PATH" >> ~/.zshrc
 source ~/.zshrc
