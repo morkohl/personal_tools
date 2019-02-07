@@ -1,0 +1,22 @@
+#! /bin/bash
+
+PARENT_DIRECTORY=$1
+
+if [ -d "$PARENT_DIRECTORY" ] 
+then
+	cd $PARENT_DIRECTORY
+	for SUB_DIRECTORY in $(ls -d */)
+	do
+		if [ -d "$SUB_DIRECTORY/.git" ]
+		then
+			echo -e "updating \e[23m$SUB_DIRECTORY..."
+			cd $SUB_DIRECTORY
+			git status
+			git pull -r
+			cd $PARENT_DIRECTORY
+		fi
+	done
+else
+	echo "please enter a valid directory..."
+	exit 1
+fi
