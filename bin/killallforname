@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+PROGRAM_NAME="$@"
+
+if [ -z $PROGRAM_NAME ]; then
+	echo "no program name supplied. exiting..."
+	exit 1
+fi
+
+PROGRAM_NAME_PIDS=$(pgrep $PROGRAM_NAME)
+PROGRAM_NAME_PIDS_COUNT=$(pgrep $PROGRAM_NAME -c)
+
+if [ $PROGRAM_NAME_PIDS_COUNT == 0 ];then
+        echo "no instances of $PROGRAM_NAME detected. exiting.."
+        exit 1
+else
+        echo "terminating $PROGRAM_NAME_PIDS_COUNT instances of $PROGRAM_NAME..."
+        for pid in $PROGRAM_NAME_PIDS
+	do 
+		kill -9 $pid
+	done
+fi
+
+echo "done! exiting..."
+
+
