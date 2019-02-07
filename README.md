@@ -2,12 +2,10 @@
 
 ## Install these tools:
 
-# Bash
+### Bash
 
-echo "export PATH=/path/to/installation/bin:$PATH" >> ~/.bashrc
-source ~/.bashrc
+echo "export PATH=/path/to/installation/bin:$PATH" >> ~/.bashrc && source ~/.bashrc
 
-# ZSH
+### ZSH
 
-echo "export PATH=/path/to/installation/bin:$PATH" >> ~/.zshrc
-source ~/.zshrc
+echo "export PATH=/path/to/installation/bin:$PATH" >> ~/.zshrc && source ~/.zshrc
