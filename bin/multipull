@@ -1,11 +1,12 @@
 #!/usr/bin/env bash 
 
 PARENT_DIRECTORY=$1
+PATTERN=$2
 
 if [ -d "$PARENT_DIRECTORY" ] 
 then
 	cd $PARENT_DIRECTORY
-	for SUB_DIRECTORY in $(ls -d */)
+	for SUB_DIRECTORY in $(ls -d $PATTERN*/)
 	do
 		if [ -d "$SUB_DIRECTORY/.git" ]
 		then
